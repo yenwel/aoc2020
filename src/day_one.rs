@@ -1,17 +1,17 @@
 use itertools::Itertools;
 
 pub fn challenge_one (input: &str) -> Option<(u32,u32)>{
-    return input.split("\n")
-            .cartesian_product(input.split("\n"))
+    return input.split("\r\n")
+            .cartesian_product(input.split("\r\n"))
             .map(|(first, second)| (first.parse::<u32>().unwrap(),second.parse::<u32>().unwrap()))
             .find(|(first, second)| first != second && ((first + second) == 2020));
 
 }
 
 pub fn challenge_two (input: &str) -> Option<(u32,u32,u32)>{
-    return input.split("\n")
-            .cartesian_product(input.split("\n"))
-            .cartesian_product(input.split("\n"))
+    return input.split("\r\n")
+            .cartesian_product(input.split("\r\n"))
+            .cartesian_product(input.split("\r\n"))
             .map(|((first, second), third)| (first.parse::<u32>().unwrap(),second.parse::<u32>().unwrap(),third.parse::<u32>().unwrap()))
             .find(|(first, second,third)| first != second && second != third && ((first + second + third) == 2020));
 

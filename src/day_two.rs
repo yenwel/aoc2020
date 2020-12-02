@@ -4,7 +4,7 @@ use regex::Regex;
 use super::utils;
 
 pub fn challenge_day_two(){
-    
+
     let input = utils::read_day(2).unwrap();
 
     lazy_static! {
@@ -13,7 +13,7 @@ pub fn challenge_day_two(){
     
     let mut count_correct = 0;
     let mut count_correct_second = 0;
-    for s in input.split("\n").into_iter(){
+    for s in input.split("\r\n").into_iter(){
         let caps = RE.captures(s).unwrap();
         let min = &caps["min"].parse::<usize>().unwrap();
         let max = &caps["max"].parse::<usize>().unwrap();
