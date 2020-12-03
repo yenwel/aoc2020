@@ -2,6 +2,7 @@
 
 mod day_one;
 mod day_two;
+mod day_three;
 mod utils;
 
 fn main(){
@@ -24,6 +25,8 @@ fn main(){
         Err(e) => println!("{}",e)
     }
     day_two::challenge_day_two();
+    day_three::run_challenge_one();    
+    day_three::run_challenge_two();
 }
 
 
