@@ -3,7 +3,7 @@ use regex::Regex;
 
 use super::utils;
 
-pub fn challenge_day_two(){
+pub fn run_challenges(){
 
     let input = utils::read_day(2).unwrap();
 

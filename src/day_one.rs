@@ -1,6 +1,7 @@
 use itertools::Itertools;
+use super::utils;
 
-pub fn challenge_one (input: &str) -> Option<(u32,u32)>{
+fn challenge_one (input: &str) -> Option<(u32,u32)>{
     return input.split("\r\n")
             .cartesian_product(input.split("\r\n"))
             .map(|(first, second)| (first.parse::<u32>().unwrap(),second.parse::<u32>().unwrap()))
@@ -8,13 +9,34 @@ pub fn challenge_one (input: &str) -> Option<(u32,u32)>{
 
 }
 
-pub fn challenge_two (input: &str) -> Option<(u32,u32,u32)>{
+fn challenge_two (input: &str) -> Option<(u32,u32,u32)>{
     return input.split("\r\n")
             .cartesian_product(input.split("\r\n"))
             .cartesian_product(input.split("\r\n"))
             .map(|((first, second), third)| (first.parse::<u32>().unwrap(),second.parse::<u32>().unwrap(),third.parse::<u32>().unwrap()))
             .find(|(first, second,third)| first != second && second != third && ((first + second + third) == 2020));
 
+}
+
+pub fn run_challenges() {
+    let input_one = utils::read_day(1);
+    match input_one {
+        Ok(input_one) => {
+            let result = challenge_one(&input_one);
+            println!("{:?}",result);
+            match result {
+                Some((first, second)) => println!("{:?}",first*second),
+                None => {}
+            }
+            let result_two = challenge_two(&input_one);
+            println!("{:?}", result_two);
+            match result_two {
+                Some((first, second, third)) => println!("{:?}",first*second*third),
+                None => {}
+            }
+        },
+        Err(e) => println!("{}",e)
+    }
 }
 
 #[cfg(test)]
