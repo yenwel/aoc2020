@@ -1,4 +1,3 @@
-use itertools::Itertools;
 use super::utils;
 
 fn get_index(line: &str, index: usize, right: usize, down: usize) -> usize
@@ -54,7 +53,7 @@ mod tests {
 
     #[test]
     fn test_challenge_one() {
-        let input = utils::read_test(3);
+        let input = utils::read_test(3, None);
         match input {
             Ok(input) =>{
                 let count1 = traverse_slope(&input,1,1);
