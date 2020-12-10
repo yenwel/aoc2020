@@ -7,6 +7,7 @@ mod day_three;
 mod day_four;
 mod day_seven;
 mod day_eight;
+mod day_nine;
 mod utils;
 
 
@@ -30,7 +31,11 @@ fn main(){
            "eight" => {
                 day_eight::run_challenge_one();
                 day_eight::run_challenge_two();
-           }
+           } 
+           "nine" => {
+                day_nine::run_challenge_one();
+                day_nine::run_challenge_two();
+            }
            &_ => println!("day not iplemented")
         }
     }
