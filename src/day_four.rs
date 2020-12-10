@@ -85,6 +85,7 @@ fn check_pid(pid: &str)-> bool {
 fn check_ecl(ecl: &str)-> bool {   
     VALID_ECL.contains(&ecl)
 }
+
 fn check_content_valid_passports(passport: &HashMap<&str,&str>) -> bool {
     if !check_byr(passport[BYR]) {
         println!("invalid byr {}", passport[BYR]);
